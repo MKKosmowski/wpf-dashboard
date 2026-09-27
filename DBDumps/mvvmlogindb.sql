@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`, `Name`, `LastName`, `Email`) VALUES
-('4812fb62-b4f1-11f1-b06c-00155d4fdd70', 'admin', 'admin', 'RJ Code', 'Advance', 'rjcode@gmail.com'),
+('4812fb62-b4f1-11f1-b06c-00155d4fdd70', 'admin', 'admin', 'Admin', 'Admin', 'admin@gmail.com'),
 ('4824799e-b4f1-11f1-b06c-00155d4fdd70', 'jazz', 'qwerty', 'Jazzlyn Yarely', 'Sebhant', 'jazz.m@gmail.com'),
 ('4827a847-b4f1-11f1-b06c-00155d4fdd70', 'keni', 'asdfg', 'Kenisha Aira', 'Montero', 'keni.m@gmail.com');
 

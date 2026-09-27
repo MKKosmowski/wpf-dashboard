@@ -52,7 +52,34 @@ namespace ModernUITutorial.Repositiories
 
         public UserModel GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            UserModel user = null;
+
+            using (var connection = GetConnection())
+            using (var command = new MySqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM users WHERE username=@username";
+                command.Parameters.Add("@username", MySqlDbType.VarChar).Value = username;
+                using(var reader = command.ExecuteReader())
+                {
+                    if(reader.Read())
+                    {
+                        user = new UserModel()
+                        {
+                            Id = reader[0].ToString(),
+                            Username = reader[1].ToString(),
+                            Password = "",
+                            Name = reader[3].ToString(),
+                            LastName = reader[4].ToString(),
+                            Email = reader[5].ToString()
+                        };
+
+                    }
+                }
+            }
+
+            return user;
         }
 
         public void Remove(int id)
