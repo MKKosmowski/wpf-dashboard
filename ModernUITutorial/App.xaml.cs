@@ -25,7 +25,7 @@ namespace ModernUITutorial
                 if (loginView.IsVisible == false && loginView.IsLoaded)
                 {
                     var mainView = new MainView();
-                    mainView.Show();
+            mainView.Show();
                     loginView.Close();
                 }
             };
